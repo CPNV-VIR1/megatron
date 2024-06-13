@@ -12,10 +12,19 @@ services:
       spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
       spring.jpa.hibernate.ddl-auto: update
 
+  ms-post:
     build:
-      context: .
-    ports:
-      - 5421:5421
+      context: ms-post
+    depends_on:
+      ms-db:
+        condition: service_healthy
+    environment:
+      spring.datasource.url: jdbc:postgresql://ms-db:5432/megatron
+      spring.datasource.username: megatron
+      spring.datasource.password: megatron
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
+
   ms-delete:
     build:
       context: ms-delete
