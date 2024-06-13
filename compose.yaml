@@ -17,21 +17,15 @@ services:
         condition: service_healthy
     environment:
       - POSTGRES_URL=jdbc:postgresql://db:5432/megatron
-      - spring.application.name:megatron
-      - spring.datasource.url:jdbc:postgresql://db:5432/megatron
-      - spring.datasource.username:megatron
-      - spring.datasource.password:megatron
-      - spring.jpa.database-platform:org.hibernate.dialect.PostgreSQLDialect
-      - spring.jpa.hibernate.ddl-auto:update
   db:
     image: postgres
     restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB:megatron
-      - POSTGRES_USER:megatron
-      - POSTGRES_PASSWORD:megatron
+      - POSTGRES_DB=megatron
+      - POSTGRES_USER=megatron
+      - POSTGRES_PASSWORD=megatron
     ports:
       - 5432:5432
     healthcheck:
@@ -40,4 +34,4 @@ services:
       timeout: 5s
       retries: 5
 volumes:
-  db-data:
+  db-data: {}
