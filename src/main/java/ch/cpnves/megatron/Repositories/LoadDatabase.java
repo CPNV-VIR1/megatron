@@ -1,6 +1,6 @@
-package ch.cpnves.payroll.Repositories;
+package ch.cpnves.megatron.Repositories;
 
-import ch.cpnves.payroll.Entities.Employee;
+import ch.cpnves.megatron.Entities.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -12,10 +12,9 @@ public class LoadDatabase {
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
     @Bean
-    CommandLineRunner initDatabase(EmployeeRepository repository){
+    CommandLineRunner initDatabase(ProductRepository repository){
         return args->{
-            log.info("Preloading " + repository.save(new Employee("Bilbo Baggins", "burglar")));
-            log.info("Preloading " + repository.save(new Employee("Frodo Baggins", "thief")));
+            log.info("Preloading " + repository.save(new Product("Optimum Prideo", Double.parseDouble("20.32"))));
         };
     }
 }

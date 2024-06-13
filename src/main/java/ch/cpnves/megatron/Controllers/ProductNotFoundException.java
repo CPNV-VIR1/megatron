@@ -1,4 +1,4 @@
-package ch.cpnves.payroll.Controllers;
+package ch.cpnves.megatron.Controllers;
 
 public class ProductNotFoundException extends RuntimeException {
 
