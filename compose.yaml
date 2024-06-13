@@ -16,14 +16,19 @@ services:
       context: .
     ports:
       - 5421:5421
+  ms-delete:
+    build:
+      context: ms-delete
     depends_on:
-      db:
+      ms-db:
         condition: service_healthy
     environment:
-      - POSTGRES_URL=jdbc:postgresql://db:5432/megatron
-  db:
-    image: postgres
-    restart: always
+      spring.datasource.url: jdbc:postgresql://ms-db:5432/megatron
+      spring.datasource.username: megatron
+      spring.datasource.password: megatron
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
+
   ms-api-gateway:
     build:
       context: ms-api-gateway
