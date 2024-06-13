@@ -1,7 +1,17 @@
 services:
+  ms-get:
+    build:
+      context: ms-get
     depends_on:
-      - server
-  server:
+      ms-db:
+        condition: service_healthy
+    environment:
+      spring.datasource.url: jdbc:postgresql://ms-db:5432/megatron
+      spring.datasource.username: megatron
+      spring.datasource.password: megatron
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
+
     build:
       context: .
     ports:
