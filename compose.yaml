@@ -33,6 +33,10 @@ services:
       timeout: 10s
       retries: 3
 
+  ms-db:
+    build:
+      context: ms-db
+    restart: unless-stopped
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
