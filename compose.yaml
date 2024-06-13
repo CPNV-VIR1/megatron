@@ -25,6 +25,19 @@ services:
       spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
       spring.jpa.hibernate.ddl-auto: update
 
+  ms-put:
+    build:
+      context: ms-put
+    depends_on:
+      ms-db:
+        condition: service_healthy
+    environment:
+      spring.datasource.url: jdbc:postgresql://ms-db:5432/megatron
+      spring.datasource.username: megatron
+      spring.datasource.password: megatron
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
+
   ms-delete:
     build:
       context: ms-delete
@@ -67,12 +80,11 @@ services:
       - POSTGRES_DB=megatron
       - POSTGRES_USER=megatron
       - POSTGRES_PASSWORD=megatron
-    ports:
-      - 5432:5432
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "megatron" ]
+      test: ["CMD", "pg_isready", "-U", "megatron"]
       interval: 10s
       timeout: 5s
       retries: 5
+
 volumes:
   db-data: {}
