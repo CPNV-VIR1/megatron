@@ -13,6 +13,7 @@ This project is design to return transformers products.
 List all dependencies and their version needed by the project as :
 
 * Docker Engine
+* Intellij Idea Ultimate
 
 ## Deployment
 
