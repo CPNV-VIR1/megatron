@@ -59,6 +59,7 @@ services:
       - 8080:80
     volumes:
       - ./ms-api-gateway/nginx.conf:/etc/nginx/nginx.conf
+      - "./ms-api-gateway/404.html:/usr/share/nginx/html/404.html"
     depends_on:
       - ms-get
       - ms-post
