@@ -29,8 +29,6 @@ docker compose up --build
 
 ## Directory structure
 
-* Tip: try the tree bash command
-
 ```shell
 C:.
 ├───.idea
