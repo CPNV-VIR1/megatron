@@ -1,45 +1,177 @@
-# Spring - REST API
+# MASTER-README 
 
-This repository is an example of an api rest spring application.
+The title must be replaced by the application's name>.
 
-## First build
+## Description
 
-Note : To find out which version of jdk to install in your project, check the pom.xlm file!
+This project is designed to .... and the main features are ...
 
-* After cloning this repository, to retrieve the dependencies, compile and run the program for the first time, Run this command:
+## Getting Started
 
-[INPUT]
+### Prerequisites
+
+List all dependencies and their version needed by the project as :
+
+* Docker Engine
+
+## Deployment
+
+### On dev environment
+
+```shell
+git clone https://github.com/CPNV-VIR1/megatron.git
 ```
-   mvn clean spring-boot:run
+
+```shell
+docker compose up --build
 ```
 
-[OUTPUT]
+## Directory structure
+
+* Tip: try the tree bash command
+
+```shell
+C:.
+├───.idea
+│   └───inspectionProfiles
+├───.mvn
+│   └───wrapper
+├───db
+├───docs
+├───megatron.wiki
+├───ms-api-gateway
+├───ms-db
+├───ms-delete
+│   ├───.mvn
+│   │   └───wrapper
+│   └───src
+│       ├───main
+│       │   ├───java
+│       │   │   └───ch
+│       │   │       └───cpnves
+│       │   │           └───megatron
+│       │   │               ├───Controllers
+│       │   │               ├───Entities
+│       │   │               └───Repositories
+│       │   └───resources
+│       └───test
+│           └───java
+│               └───ch
+│                   └───cpnves
+│                       └───megatron
+├───ms-get
+│   ├───.mvn
+│   │   └───wrapper
+│   └───src
+│       ├───main
+│       │   ├───java
+│       │   │   └───ch
+│       │   │       └───cpnves
+│       │   │           └───megatron
+│       │   │               ├───Controllers
+│       │   │               ├───Entities
+│       │   │               └───Repositories
+│       │   └───resources
+│       └───test
+│           └───java
+│               └───ch
+│                   └───cpnves
+│                       └───megatron
+├───ms-post
+│   ├───.mvn
+│   │   └───wrapper
+│   └───src
+│       ├───main
+│       │   ├───java
+│       │   │   └───ch
+│       │   │       └───cpnves
+│       │   │           └───megatron
+│       │   │               ├───Controllers
+│       │   │               ├───Entities
+│       │   │               └───Repositories
+│       │   └───resources
+│       └───test
+│           └───java
+│               └───ch
+│                   └───cpnves
+│                       └───megatron
+├───ms-put
+│   ├───.mvn
+│   │   └───wrapper
+│   └───src
+│       ├───main
+│       │   ├───java
+│       │   │   └───ch
+│       │   │       └───cpnves
+│       │   │           └───megatron
+│       │   │               ├───Controllers
+│       │   │               ├───Entities
+│       │   │               └───Repositories
+│       │   └───resources
+│       └───test
+│           └───java
+│               └───ch
+│                   └───cpnves
+│                       └───megatron
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───ch
+│   │   │       └───cpnves
+│   │   │           └───megatron
+│   │   │               ├───Controllers
+│   │   │               ├───Entities
+│   │   │               └───Repositories
+│   │   └───resources
+│   └───test
+│       └───java
+│           └───ch
+│               └───cpnves
+│                   └───megatron
+└───target
+    ├───classes
+    │   └───ch
+    │       └───cpnves
+    │           └───payroll
+    │               ├───Controllers
+    │               ├───Entities
+    │               └───Repositories
+    ├───generated-sources
+    │   └───annotations
+    ├───generated-test-sources
+    │   └───test-annotations
+    ├───maven-status
+    │   └───maven-compiler-plugin
+    │       ├───compile
+    │       │   └───default-compile
+    │       └───testCompile
+    │           └───default-testCompile
+    └───test-classes
+        └───ch
+            └───cpnves
 ```
-  [...]
-    2024-05-30T08:42:27.632+02:00  INFO 1088 --- [payroll] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-    2024-05-30T08:42:27.640+02:00  INFO 1088 --- [payroll] [           main] ch.cpnves.payroll.PayrollApplication     : Started PayrollApplication in 2.839 seconds (process running for 3.086)
-    2024-05-30T08:42:27.684+02:00  INFO 1088 --- [payroll] [           main] c.c.payroll.Repositories.LoadDatabase    : Preloading Employee{id=1, name='Bilbo Baggins', role='burglar'}
-    2024-05-30T08:42:27.685+02:00  INFO 1088 --- [payroll] [           main] c.c.payroll.Repositories.LoadDatabase    : Preloading Employee{id=2, name='Frodo Baggins', role='thief'}
-  [...]
-```
 
-## Test using http requests
+## Collaborate
 
-Got the file [project]\src\main\java\ch\cpnves\payroll\Controllers\EmployeeController.java
+We encourage collaboration and welcome contributions from the community. Here’s how you can get involved:
 
-Before all routes methods, you will find a curl sample.
+### Propose a New Feature
 
-[INPUT]
-```
-curl -i localhost:8080/employees     
-````
+If you have an idea for a new feature, please follow these steps:
 
-[OUTPUT]
-```
-HTTP/1.1 200 
-Content-Type: application/json
-Transfer-Encoding: chunked
-Date: Thu, 30 May 2024 06:45:57 GMT
+1. **Open an Issue**: Describe the feature you would like to add. Include details about its functionality and how it will benefit the project.
+2. **Pull Request**: Once the issue is discussed and approved, you can start working on it. Submit a pull request (PR) with your changes. Ensure your PR is linked to the issue.
 
-[{"id":1,"name":"Bilbo Baggins","role":"burglar"},{"id":2,"name":"Frodo Baggins","role":"thief"}]
-```
+### Commit Guidelines
+
+To maintain a clear and meaningful commit history, please follow these commit message conventions:
+
+- **chore**: Commit messages for routine tasks and maintenance (e.g., `chore: update dependencies`).
+- **feat**: Commit messages for new features (e.g., `feat: add user login feature`).
+- **fix**: Commit messages for bug fixes (e.g., `fix: resolve issue with user login`).
+- **refactor**: Commit messages for code refactoring (e.g., `refactor: optimize login algorithm`).
+- **docs**: Commit messages for documentation changes (e.g., `docs: update README with new feature`).
+
+### Workflow
+
+Our development workflow follows the guidelines outlined in the Gitbook. 
