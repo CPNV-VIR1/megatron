@@ -1,7 +1,0 @@
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\PayrollApplication.java
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\Repositories\LoadDatabase.java
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\Repositories\EmployeeRepository.java
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\Entities\Employee.java
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\Controllers\EmployeeController.java
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\Controllers\EmployeeNotFoundException.java
-C:\Users\phili\IdeaProjects\Labs\Labo04\spring-rest-api\src\main\java\ch\cpnves\payroll\Controllers\EmployeeNotFoundAdvice.java
